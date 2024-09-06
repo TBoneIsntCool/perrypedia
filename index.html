@@ -9,6 +9,7 @@
     <style>
         :root {
             --footer-height: 50px; /* Adjust this value if the footer height changes */
+            --spacer-height: 100px; /* Adjust this value to control the extra space below the footer */
         }
 
         html, body {
@@ -122,6 +123,11 @@
             height: var(--footer-height); /* Ensure footer height is consistent */
         }
 
+        /* Add space below the footer */
+        .spacer {
+            height: var(--spacer-height);
+        }
+
         /* Media query for screens 720px or smaller */
         @media (max-width: 720px) {
             .top-bar {
@@ -198,6 +204,9 @@
     <footer>
         <p>&copy; 2024 Perrypedia - All rights reserved.</p>
     </footer>
+
+    <!-- Spacer to add extra space below the footer -->
+    <div class="spacer"></div>
 
     <script>
         // Check if today is Friday
