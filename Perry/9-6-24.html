@@ -8,153 +8,150 @@
     <link rel="icon" type="image/x-icon" href="/icon.ico">
     <style>
         html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-    background-color: #f9f9f9;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
-    box-sizing: border-box; /* Ensure padding and border are included in width and height */
-}
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background-color: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+            box-sizing: border-box; /* Ensure padding and border are included in width and height */
+        }
 
-h1 {
-    font-family: Georgia, serif;
-    font-size: 2.5em;
-    margin: 20px 0;
-    text-align: center;
-    font-weight: normal;
-    width: 100%;
-    box-sizing: border-box;
-}
+        h1 {
+            font-family: Georgia, serif;
+            font-size: 2.5em;
+            margin: 20px 0;
+            text-align: center;
+            font-weight: normal;
+        }
 
-.top-bar {
-    background-color: #e0e0e0;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    width: 100%;
-    box-sizing: border-box;
-}
+        .top-bar, .announcement-bar, footer {
+            width: 100%;
+            box-sizing: border-box; /* Include padding and border in width */
+        }
 
-.top-bar img {
-    height: 40px;
-    margin-right: 10px;
-}
+        .top-bar {
+            background-color: #e0e0e0;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            transition: top 0.3s ease;
+        }
 
-.top-bar a {
-    color: #000;
-    text-decoration: none;
-    font-size: 1.5em;
-    font-family: Georgia, serif;
-    display: flex;
-    align-items: center;
-}
+        .top-bar img {
+            height: 40px;
+            margin-right: 10px;
+        }
 
-.announcement-bar {
-    background-color: #ffeb3b;
-    color: black;
-    padding: 10px;
-    text-align: center;
-    font-size: 1.2em;
-    font-weight: bold;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1001;
-    display: none;
-    width: 100%;
-    box-sizing: border-box;
-}
+        .top-bar a {
+            color: #000;
+            text-decoration: none;
+            font-size: 1.5em;
+            font-family: Georgia, serif;
+            display: flex;
+            align-items: center;
+        }
 
-.announcement-bar a {
-    color: blue;
-    text-decoration: underline;
-}
+        .announcement-bar {
+            background-color: #ffeb3b;
+            color: black;
+            padding: 10px;
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: bold;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1001;
+            display: none;
+        }
 
-.content {
-    margin-top: 60px; /* Adjust for top bar height */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-    width: 100%;
-    box-sizing: border-box;
-}
+        .announcement-bar a {
+            color: blue;
+            text-decoration: underline;
+        }
 
-.content img {
-    max-width: 100%;
-    max-height: 60vh;
-    object-fit: contain;
-}
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 100px 20px 20px;
+            box-sizing: border-box;
+        }
 
-.content p {
-    font-size: 1.2em;
-    margin: 20px 0;
-    max-width: 80%;
-    word-wrap: break-word;
-}
+        .content img {
+            max-width: 100%;
+            max-height: 60vh;
+            object-fit: contain;
+        }
 
-footer {
-    background-color: #f1f1f1;
-    padding: 10px;
-    text-align: center;
-    font-size: 0.9em;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    box-sizing: border-box;
-    width: 100%;
-    margin-top: 20px; /* Ensure space below content */
-}
+        .content p {
+            font-size: 1.2em;
+            margin: 20px 0;
+            max-width: 80%;
+            word-wrap: break-word;
+        }
 
-@media (max-width: 1024px) {
-    h1 {
-        font-size: 2em;
-    }
-}
+        footer {
+            background-color: #f1f1f1;
+            padding: 10px;
+            text-align: center;
+            font-size: 0.9em;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            box-sizing: border-box;
+        }
 
-@media (max-width: 720px) {
-    h1 {
-        font-size: 1.8em;
-    }
+        @media (max-width: 1024px) {
+            h1 {
+                font-size: 2em;
+            }
+        }
 
-    .top-bar {
-        padding: 8px;
-    }
+        @media (max-width: 720px) {
+            h1 {
+                font-size: 1.8em;
+            }
 
-    .top-bar img {
-        height: 30px;
-    }
+            .top-bar {
+                padding: 8px;
+            }
 
-    .top-bar a {
-        font-size: 1.2em;
-    }
+            .top-bar img {
+                height: 30px;
+            }
 
-    .content {
-        padding: 80px 10px 10px;
-    }
+            .top-bar a {
+                font-size: 1.2em;
+            }
 
-    .content img {
-        max-height: 50vh; /* Adjusted for smaller screens */
-    }
+            .content {
+                padding: 80px 10px 10px;
+            }
 
-    .content p {
-        font-size: 1em;
-        max-width: 90%; /* Allow more width on smaller screens */
-    }
+            .content img {
+                max-height: 50vh; /* Adjusted for smaller screens */
+            }
 
-    footer {
-        font-size: 0.8em;
-    }
-}
+            .content p {
+                font-size: 1em;
+                max-width: 90%; /* Allow more width on smaller screens */
+            }
 
+            footer {
+                font-size: 0.8em;
+            }
+        }
     </style>
 </head>
 <body>
