@@ -7,6 +7,10 @@
     <title>Perrypedia</title>
     <link rel="icon" type="image/x-icon" href="/icon.ico">
     <style>
+        :root {
+            --footer-height: 50px; /* Adjust this value if the footer height changes */
+        }
+
         html, body {
             height: 100%;
             margin: 0;
@@ -34,6 +38,7 @@
             z-index: 1001; /* Positioned above the top-bar */
             display: none;
         }
+
         .announcement-bar a {
             color: blue;
             text-decoration: underline;
@@ -73,6 +78,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            padding-bottom: var(--footer-height); /* Adjust for footer height */
         }
 
         .logo img {
@@ -113,6 +119,7 @@
             position: fixed;
             bottom: 0;
             width: 100%;
+            height: var(--footer-height); /* Ensure footer height is consistent */
         }
 
         /* Media query for screens 720px or smaller */
