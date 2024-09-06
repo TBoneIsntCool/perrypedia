@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Perrypedia - The World's Largest Free Online Perry Encyclopedia</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background-color: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .announcement-bar {
+            background-color: #ffeb3b;
+            color: black;
+            padding: 10px;
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: bold;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1001; /* Positioned above the top-bar */
+            display: none;
+        }
+        .announcement-bar a {
+            color: blue;
+            text-decoration: underline;
+        }
+
+        .top-bar {
+            background-color: #e0e0e0;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            position: fixed;
+            top: 0; /* Start at the top, will move down if announcement bar appears */
+            left: 0;
+            right: 0;
+            z-index: 999;
+            transition: top 0.3s ease; /* Smooth transition when announcement bar appears */
+        }
+
+        .top-bar img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .top-bar a {
+            color: #000;
+            text-decoration: none;
+            font-size: 1.5em;
+            font-family: Georgia, serif;
+            display: flex;
+            align-items: center;
+        }
+
+        .content {
+            margin-top: 150px; /* Adjust for top and announcement bars */
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 200px;
+            height: auto;
+        }
+
+        h1 {
+            font-family: Georgia, serif;
+            font-size: 1.8em;
+            font-weight: normal;
+        }
+
+        .directory {
+            margin-top: 40px;
+        }
+
+        .directory ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .directory li {
+            margin: 10px 0;
+            font-size: 1.2em;
+        }
+
+        .directory a {
+            text-decoration: none;
+            color: #007acc;
+        }
+
+        footer {
+            background-color: #f1f1f1;
+            padding: 10px;
+            text-align: center;
+            font-size: 0.9em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Announcement Bar -->
+    <div id="announcement-bar" class="announcement-bar">
+        📢 PERRY FRIDAY! New Perry picture.
+        <a href="example.com/friday/08-30-2024">Click here to view it!</a>
+    </div>
+
+    <!-- Permanent Top Bar -->
+    <div class="top-bar" id="top-bar">
+        <a href="index.html">
+            <img src="wikipedia.png" alt="Perrypedia Logo">
+            Perrypedia
+        </a>
+    </div>
+
+    <div class="content">
+        <div class="logo">
+            <img src="wikipedia.png" alt="Perrypedia Logo">
+        </div>
+        <h1>The World's Largest Free Online Perry Encyclopedia</h1>
+
+        <div class="directory">
+            <h2>Perry Friday Directory</h2>
+            <ul>
+                <li><a href="/Perry/8-30-24.html">30th August 2024</a></li>
+                <li><a href="/Perry/8-23-24.html">23rd August 2024</a></li>
+                <!-- Add more links as you release new Perry Fridays -->
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Perrypedia - All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Check if today is Friday
+        function isFriday() {
+            const today = new Date();
+            const day = today.getDay(); // 5 is Friday
+            return day === 5;
+        }
+
+        const announcementBar = document.getElementById('announcement-bar');
+        const topBar = document.getElementById('top-bar');
+
+        // Display announcement bar if it's Friday, adjust top bar position
+        if (isFriday()) {
+            announcementBar.style.display = 'block';
+            topBar.style.top = '50px'; // Push top bar down to make room for announcement
+        }
+    </script>
+
+</body>
+</html>
