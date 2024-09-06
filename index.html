@@ -114,6 +114,45 @@
             bottom: 0;
             width: 100%;
         }
+
+        /* Media query for screens 720px or smaller */
+        @media (max-width: 720px) {
+            .top-bar {
+                padding: 5px;
+            }
+
+            .top-bar img {
+                height: 30px;
+            }
+
+            .top-bar a {
+                font-size: 1.2em;
+            }
+
+            .content {
+                margin-top: 120px; /* Adjust for top and announcement bars */
+            }
+
+            .logo img {
+                width: 150px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+
+            .directory li {
+                font-size: 1em;
+            }
+
+            .directory a {
+                font-size: 1em;
+            }
+
+            footer {
+                font-size: 0.8em;
+            }
+        }
     </style>
 </head>
 <body>
@@ -134,7 +173,7 @@
 
     <div class="content">
         <div class="logo">
-            <img src="wikipedia.png" alt="Perrypedia Logo">
+            <img src="icon.png" alt="Perrypedia Logo">
         </div>
         <h1>The World's Largest Free Online Perry Encyclopedia</h1>
 
